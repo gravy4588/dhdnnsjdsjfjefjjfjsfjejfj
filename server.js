@@ -1,3 +1,17 @@
+const Discord = require("discord.js");
+const client = new Discord.Client();
+var prefix = "Y";
+client.on('ready', () => {
+   console.log(`----------------`);
+      console.log(`Desert Bot- Script By : Y.K.M`);
+        console.log(`----------------`);
+      console.log(`ON ${client.guilds.size} Servers '     Script By : Y.K.M ' `);
+    console.log(`----------------`);
+  console.log(`Logged in as ${client.user.tag}!`);
+client.user.setGame(`Hi im pearl gaming bot by y.k.m`,"")
+client.user.setStatus("dnd")
+});
+
 client.on('message', message => {
    
     let u = convertMS(client.uptime);
@@ -60,3 +74,4 @@ ${user.tag}
     seconds = seconds > 9 ? seconds : '0' + seconds
     return `${days > 0 ? `${days}:` : ''}${(hours || days) > 0 ? `${hours}:` : ''}${minutes}:${seconds}`
 };
+client.login(process.env.BOT_TOKEN);
